@@ -1,0 +1,36 @@
+.searchBox {
+  margin: 40px auto;
+  width: 350px;
+}
+
+.input {
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  border-bottom: 1px solid #e3e4dc;
+  color: darkslategray;
+  font-size: 16px;
+  padding: 13px 20px;
+  width: 100%;
+}
+
+.input:focus {
+  border: 2px solid green;
+  border-radius: 8px;
+  outline: none;
+}
+
+.searchBox button {
+  background-color: #4caf50;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  margin: 10px 0px;
+  outline: none;
+  padding: 10px 17px;
+}
+
+.noResults {
+  color: crimson;
+  margin: 20px 0px 0px 50px;
+}

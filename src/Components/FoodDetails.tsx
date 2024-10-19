@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from "react";
 import styles from "./FoodDetails.module.css";
 
+//Define a type for Ingredient
 type Ingredient = {
   id: number;
   name: string;
 };
 
+//Define a type for Equipment
 type Equipment = {
   id: number;
   name: string;
 };
 
+//Define a type for Length
 type Length = {
   number: number;
   unit: string;
 };
 
+//Define a type for Step
 type Step = {
   number: number;
   step: string;
@@ -24,12 +28,14 @@ type Step = {
   length?: Length;
 };
 
+//Define a type for Analyzed Instruction
 type AnalyzedInstruction = {
   name: string;
   steps: Step[];
   // Add other properties as needed
 };
 
+//Define a type for Extended Ingredients
 type ExtendedIngredients = {
   id: number;
   image: string;
@@ -38,9 +44,8 @@ type ExtendedIngredients = {
   unit: string;
 };
 
-//Define a type for a food item (adjust according to your actual data structure)
+//Define a type for a Food Recipe
 type FoodRecipe = {
-  //Add properties that a food item would have, for example:
   id: number;
   title: string;
   image: string;
@@ -54,13 +59,15 @@ type FoodRecipe = {
   //Add other properties as needed
 };
 
-//Define the props interface for the Food Details component
+//Define the props interface for the Food Details Component
 interface FoodIdProps {
   foodId: string;
 }
+
+//Food Details Component Logic
 const FoodDetails: React.FC<FoodIdProps> = ({ foodId }) => {
   const [foodRecipe, setFoodRecipe] = useState({} as FoodRecipe);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const URL = `https://api.spoonacular.com/recipes/${foodId}/information`;
   const apiKey = import.meta.env.VITE_API_KEY;

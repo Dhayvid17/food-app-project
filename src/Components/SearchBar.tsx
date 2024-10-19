@@ -4,9 +4,8 @@ import styles from "./SearchBar.module.css";
 const URL = "https://api.spoonacular.com/recipes/complexSearch";
 const apiKey = import.meta.env.VITE_API_KEY;
 
-//Define a type for a food item (adjust according to your actual data structure)
+//Define a type for a food item
 type FoodItem = {
-  //Add properties that a food item would have, for example:
   id: number;
   title: string;
   image: string;
@@ -19,9 +18,10 @@ interface SearchProps {
   setFoodData: Dispatch<SetStateAction<FoodItem[]>>;
 }
 
+//Search Component Logic
 const Search: React.FC<SearchProps> = ({ foodData, setFoodData }) => {
-  const [query, setQuery] = useState("");
-  const [noResults, setNoResults] = useState(false); //Add a state to track if no results were found
+  const [query, setQuery] = useState<string>("");
+  const [noResults, setNoResults] = useState<boolean>(false); //Add a state to track if no results were found
 
   const fetchFood = async () => {
     setNoResults(false); //Reset the noResults state before making the API call
@@ -42,12 +42,14 @@ const Search: React.FC<SearchProps> = ({ foodData, setFoodData }) => {
     fetchFood();
   }, [query]);
 
+  //Handle Search Logic
   const handleSearch = () => {
     if (query.trim()) {
       fetchFood();
     }
   };
 
+  //Handle Keydown Logic
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       handleSearch();

@@ -1,23 +1,22 @@
-// import { Dispatch, SetStateAction } from "react";
 import React from "react";
 import { Dispatch, SetStateAction } from "react";
 import FoodListItem from "./FoodListItem";
 
-// Define a type for a food item (adjust according to your actual data structure)
+//Define a type for a food item
 type FoodItem = {
-  // Add properties that a food item would have, for example:
   id: number;
   title: string;
   image: string;
-  // Add other properties as needed
+  //Add other properties as needed
 };
 
-// Define the props interface for the Search component
+//Define the props interface for the Food List Component
 interface SearchProps {
   foodData: FoodItem[];
   setFoodId: Dispatch<SetStateAction<string | null>>;
-  //   setFoodData: Dispatch<SetStateAction<FoodItem[]>>;
 }
+
+//Food List Component Logic
 const FoodList: React.FC<SearchProps> = ({ foodData, setFoodId }) => {
   return (
     <div>

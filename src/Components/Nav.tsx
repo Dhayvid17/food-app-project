@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Nav.module.css";
 
+//Nav Component Logic
 const Nav: React.FC = () => {
   return (
     <div className={styles.nav}>

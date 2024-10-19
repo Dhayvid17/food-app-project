@@ -1,20 +1,21 @@
 import React from "react";
 import styles from "./FoodListItem.module.css";
 
+//Define a type for a Food Item
 type FoodItem = {
-  // Add properties that a food item would have, for example:
   id: number;
   title: string;
   image: string;
-  // Add other properties as needed
+  //Add other properties as needed
 };
 
-// Define the props interface for the FoodListItem component
+//Define the props interface for the FoodListItem Component
 interface FoodItemProps {
   food: FoodItem;
   setFoodId: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
+//Food List Item Component Logic
 const FoodListItem: React.FC<FoodItemProps> = ({ food, setFoodId }) => {
   return (
     <div className={styles.itemContainer}>

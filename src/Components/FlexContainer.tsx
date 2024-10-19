@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./FlexContainer.module.css";
 
-//Define the props interface for the Container component
+//Define the props interface for the FlexContainer component
 interface ChildrenProps {
   children: React.ReactNode;
 }
